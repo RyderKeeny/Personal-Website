@@ -1,0 +1,54 @@
+/* App.css */
+
+/* keep your global resets and smooth scroll */
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #84A07C;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Optional wrapper-level styles */
+.main {
+  /* if you truly need a background image/gradient, define it here;
+     otherwise you can drop this rule entirely */
+}
+
+/* 1) Attach this to your <Navbar> via className="navbar-custom" */
+.navbar-custom {
+  background-color: #60463B;
+  border-bottom: 2px solid #000;
+}
+
+/* 2) Brand styling: overrides the default .navbar-brand */
+.navbar-custom .navbar-brand {
+  font-size: 2.5rem;   /* ~40px */
+  font-weight: 500;
+  color: #fff;
+  margin-right: auto;  /* push the links to the right */
+}
+
+/* 3) Nav link styling: overrides .nav-link */
+.navbar-custom .nav-link {
+  font-size: larger;
+  color: #fff;
+  margin-left: 1.5rem;
+  
+}
+
+/* 4) If you want a separator underline or hover effect */
+.navbar-custom .nav-link:hover .nav-link:active
+.navbar-custom .nav-link:focus {
+  text-decoration: none;
+  color: #fff;
+  
+}
+
+/* 5) Section spacing — instead of a massive hardcoded bottom margin,
+     you can give each section some vertical padding */
+section {
+  padding-bottom: 25rem;
+  padding-top: 6rem;
+}

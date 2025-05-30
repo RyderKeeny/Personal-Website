@@ -1,0 +1,19 @@
+
+.dashbord {
+    max-width: 100%;
+    justify-content: center;
+    padding: 0rem 10rem;
+}
+
+.card-outer {
+    justify-content: center;
+    overflow: 'hidden'
+}
+
+
+
+.card-outer p {
+    align-items: center;
+    align-self: center;
+}
+
