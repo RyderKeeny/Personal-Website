@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import './dashbord.css'
 import { HydratedRouter } from 'react-router-dom'
-import { Card, CardImg, CardTitle, Col, Container, Row, CardBody} from 'react-bootstrap'
+import { Card, CardImg, CardTitle, Col, Container, Row, ProgressBar, CardBody, Tabs, Tab } from 'react-bootstrap'
 import { useEffect } from 'react' 
-
+import GitHubCalendar from 'react-github-calendar'; // Fixed import name
 
 
 function Dashbord() {
-  const [avatarURL, setAvatarURL] = useState();
-  const [githubUsername, setGitHubUsername] = useState();
-  const [repoData, setRepoData] = useState();
-  const [repoLanguage, setRepoLanguage] = useState([]);
+  const [repoData, setRepoData] = useState([]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/RyderKeeny")
@@ -18,24 +15,13 @@ function Dashbord() {
       .then(
         (result) => {
           console.log(result);
-          setAvatarURL(result.avatar_url);
-          setGitHubUsername(result.login);
-
           // Fetch repositories sorted by most recent
-          fetch(`${result.repos_url}?sort=updated&direction=desc`)
+          fetch(`${result.repos_url}?sort=updated&direction=desc&per_page=100`)
             .then((repoRes) => repoRes.json())
-            .then((repos) => {
-              setRepoData(repos);
+            .then((repos) => {setRepoData(repos);});
+          
 
-              // Extract languages for graphing
-              const languages = {};
-              repos.forEach(repo => {
-                if (repo.language) {
-                  languages[repo.language] = (languages[repo.language] || 0) + 1;
-                }
-              });
-              setRepoLanguage(Object.entries(languages).map(([name, count]) => ({ name, count })));
-            });
+            
         },
         (error) => {
           console.log(error);
@@ -47,43 +33,81 @@ function Dashbord() {
 
   return (
     <Container className='dashbord'>
-      <Card className='card-outer'>
-        <Row className='overflow-hidden'> {/* Main row that will contain both columns */}
-          {/* First column with sections 1 and 2 */}
-          <Col md={6}>
-              <Card>
-                <p>this section is 1</p>
-                <CardTitle> {githubUsername} </CardTitle>
-                
-
-              </Card>
-            
-              <Card>
-                <p>this section is 2</p>
-              </Card>
-          </Col>
-          
-          {/* Second column with section 3 */}
-          <Col md={6}>
-            <Card style={{height: '100%' }}>
-              <p>this section is 3</p>
-              <CardBody> {repoLanguage.map(lang => `${lang.name} (${lang.count})`).join(', ')} </CardBody>
-            </Card>
-          </Col>
-        </Row>
-        
-        {/* Section 4 (full width below) */}
-        <Row>
-          <Col>
+      <Tabs defaultActiveKey={"status"}>
+               
+        <Tab eventKey='status' title='Status'>
             <Card>
-              <p>this section is 4</p>
-              <CardBody> </CardBody>
+              <Row className='g-0'>
+                <Col>
+                  <Card>
+                    <CardImg alt='github report' src='https://github-readme-stats.vercel.app/api?username=RyderKeeny&hide_rank=true'></CardImg>
+                    <a href='https://github.com/RyderKeeny'>Link to Github</a>
+                  </Card>
+    
+                  <Card>
+                    <CardBody>
+                      <CardTitle> Current Repo's </CardTitle>
+                      {repoData ? (
+                        repoData.slice(0,4).map((repo) => (
+                          <div key={repo.id} style={{ marginBottom: '1rem' }}>
+                            <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
+                              <strong>{repo.name}</strong>
+                            </a>
+                          </div>
+                        ))
+                      ) : (
+                        <p>Loading repositories...</p>
+                      )}
+                    </CardBody>
+                  </Card>
+                </Col>
+                <Col>
+                  <Card>
+                    <CardImg src='https://github-readme-stats.vercel.app/api/top-langs/?username=RyderKeeny&layout=compact'></CardImg>
+                  </Card>
+                  
+                  <Card>
+                    <CardBody>
+                      <CardTitle>My Contributions</CardTitle>
+                        <GitHubCalendar
+                          username="RyderKeeny"
+                          blockSize={12}
+                          blockMargin={4}
+                          fontSize={14}
+                          theme={{
+                            light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+                            dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353']
+                          }}
+                          hideColorLegend={false}
+                          hideMonthLabels={false}
+                          style={{ margin: '0 auto' }}
+                        />
+                    </CardBody>
+                  </Card>                  
+                </Col>
+              </Row>
             </Card>
-          </Col>
-        </Row>
-      </Card>
+        </Tab>
+        
+        <Tab eventKey='projects' title='Projects'>
+        <Card>
+          <p>Future Projects</p>
+          <li>  </li>
+          {/* ... other list items ... */}
+        </Card>
+
+        <Card>
+          <p>Current Projects</p>
+          <li> Bluetooth Enabled drone toy </li>
+          {/* ... other list items ... */}
+        </Card>
+        </Tab>
+
+        {/* You can add more tabs here if needed */}
+      </Tabs>
     </Container>
   )
 }
+
 
 export default Dashbord

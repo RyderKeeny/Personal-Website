@@ -23,6 +23,10 @@ function App() {
         </Container>
       </Navbar>
 
+      <section id="About">
+        <About />
+      </section>
+
       <section id="Dashbord">
         <Dashbord />
       </section>
@@ -31,9 +35,6 @@ function App() {
         <ImageCarousel />
       </section>
 
-      <section id="About">
-        <About />
-      </section>
     </div>
   );
 }
