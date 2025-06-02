@@ -92,13 +92,17 @@ function Dashbord() {
         <Tab eventKey='projects' title='Projects'>
         <Card>
           <p>Future Projects</p>
-          <li>  </li>
+          <li> Microcontroller Based Smart Irrigation System </li>
+          <li> Automated Solar Tracker </li>
+          <li> Touch Sensitive MIDI Controller </li>
           {/* ... other list items ... */}
         </Card>
 
         <Card>
           <p>Current Projects</p>
           <li> Bluetooth Enabled drone toy </li>
+          <li> Fast Food Discount Finder </li>
+          <li> Retro Style Beat'em up fighting game </li>
           {/* ... other list items ... */}
         </Card>
         </Tab>
