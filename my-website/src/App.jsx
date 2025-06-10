@@ -15,9 +15,9 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
+              <Nav.Link href="#About">About</Nav.Link>
               <Nav.Link href="#Dashbord">Dashboard</Nav.Link>
               <Nav.Link href="#Carousel">Media</Nav.Link>
-              <Nav.Link href="#About">About</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

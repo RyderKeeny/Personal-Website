@@ -5,7 +5,7 @@ html, body, #root {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #84A07C;
+  background-color: #F5FBEF ;
   scroll-behavior: smooth;
   min-height: 100vh;
 }
@@ -18,7 +18,7 @@ html, body, #root {
 
 /* 1) Attach this to your <Navbar> via className="navbar-custom" */
 .navbar-custom {
-  background-color: #60463B;
+  background-color: #2B2D42 ;
   border-bottom: 2px solid #000;
 }
 
@@ -34,21 +34,30 @@ html, body, #root {
 .navbar-custom .nav-link {
   font-size: larger;
   color: #fff;
-  margin-left: 1.5rem;
+  margin-left: 1.0rem;
   
 }
 
 /* 4) If you want a separator underline or hover effect */
-.navbar-custom .nav-link:hover .nav-link:active
-.navbar-custom .nav-link:focus {
-  text-decoration: none;
-  color: #fff;
-  
+.navbar-custom .nav-link:hover .nav-link::after .navbar-custom .nav-link:focus  {
+  color: #fff !important;
+}
+
+.nav-link.active {
+  color: #7D82B8 !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("Hamburger.png");
 }
 
 /* 5) Section spacing — instead of a massive hardcoded bottom margin,
      you can give each section some vertical padding */
 section {
-  padding-bottom: 25rem;
+  padding-bottom: 15rem;
   padding-top: 6rem;
 }

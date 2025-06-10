@@ -1,187 +1,84 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, CardImg, CardTitle, Col, Container, Row, ProgressBar, CardBody, Tabs, Tab, CarouselItem } from 'react-bootstrap'
-
+import { Tabs, Tab, Container } from 'react-bootstrap';
+import './carousel.css'; // <-- Make sure to import the custom CSS
 
 function ImageCarousel() {
   return (
-    <Tabs defaultActiveKey={"purrPlay"}>
-      <Tab className="carousel" eventKey='purrPlay' title='PurrPlay'>
-        <Carousel interval={3000}>
-
-          {/* First slide */}
+    <Container>
+    <Tabs defaultActiveKey={"purrPlay"} className="carousel-tabs">
+      <Tab className="carousel-tab" eventKey='purrPlay' title='PurrPlay'>
+        <Carousel interval={4000}>
           <Carousel.Item>
-            <img
-              className="d-block mx-auto"
-              src="/PurrPlay_1.png"
-              alt="Slide 1"
-              style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}
-            />
+            <img className="carousel-wrapper" src="/PurrPlay_1.png" alt="Slide 1" />
           </Carousel.Item>
-
-          {/* Second slide */}
           <Carousel.Item>
-            <img
-              className="d-block mx-auto"
-              src="/PurrPlay_2.png"
-              alt="Slide 2"
-              style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}
-            />
+            <img className="carousel-wrapper" src="/PurrPlay_2.png" alt="Slide 2" />
           </Carousel.Item>
-
-          {/* Third slide */}
           <Carousel.Item>
-            <img
-              className="d-block mx-auto"
-              src="/PurrPlay_3.png"
-              alt="Slide 3"
-              style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}
-            />
+            <img className="carousel-wrapper" src="/PurrPlay_3.png" alt="Slide 3" />
           </Carousel.Item>
         </Carousel>
       </Tab>
 
-      <Tab eventKey='Fluencia' title='Fluencia' >
+      <Tab className="carousel-tab" eventKey='Fluencia' title='Fluencia'>
         <Carousel>
           <Carousel.Item>
-            <img src='/Fluencia_1.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
+            <img className="carousel-wrapper" src="/Fluencia_3.png" alt="Slide 1" />
           </Carousel.Item>
           <Carousel.Item>
-          <img src='/Fluencia_2.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
+            <img className="carousel-wrapper" src="/Fluencia_2.png" alt="Slide 2" />
           </Carousel.Item>
           <Carousel.Item>
-          <img src='/Fluencia_3.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
-          </Carousel.Item>
-        </Carousel>
-      </Tab>
-      
-      <Tab eventKey='CultureConnect' title='CultureConnect' >
-        <Carousel>
-          <Carousel.Item>
-          <img src='/CultureConnect_1.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
-          </Carousel.Item>
-          <Carousel.Item>
-          <img src='/CultureConnect_2.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
-          </Carousel.Item>
-          <Carousel.Item>
-          <img src='/CultureConnect_3.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
-          </Carousel.Item>
-        </Carousel>
-      </Tab>
-      
-      <Tab eventKey='BallerzOnly' title='BallerzOnly' >
-        <Carousel>
-          <Carousel.Item>
-          <img src='/Ballerz_1.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
-          </Carousel.Item>
-          <Carousel.Item>
-          <img src='/Ballerz_2.png'
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
-          </Carousel.Item>
-          <Carousel.Item>
-          <img src='/Ballerz_3.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
+            <img className="carousel-wrapper" src="/Fluencia_1.png" alt="Slide 3" />
           </Carousel.Item>
         </Carousel>
       </Tab>
 
-      <Tab eventKey='Bytes Of Love' title='BOL' >
+      <Tab className="carousel-tab" eventKey='CultureConnect' title='CultureConnect'>
         <Carousel>
           <Carousel.Item>
-          <img src='/BOL_menu.gif' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
+            <img className="carousel-wrapper" src="/CultureConnect_2.png" alt="Slide 1" />
           </Carousel.Item>
           <Carousel.Item>
-          <img src='/BOL_2.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
+            <img className="carousel-wrapper" src="/CultureConnect_1.png" alt="Slide 2" />
           </Carousel.Item>
           <Carousel.Item>
-          <img src='/BOL_3.png' 
-            className="d-block mx-auto"
-            style={{
-                height: '500px',
-                width: 'auto',
-                objectFit: 'contain'
-              }}/>
+            <img className="carousel-wrapper" src="/CultureConnect_3.png" alt="Slide 3" />
+          </Carousel.Item>
+        </Carousel>
+      </Tab>
+
+      <Tab className="carousel-tab" eventKey='BallerzOnly' title='BallerzOnly'>
+        <Carousel>
+          <Carousel.Item>
+            <img className="carousel-wrapper" src="/Ballerz_1.png" alt="Slide 1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-wrapper" src="/Ballerz_2.png" alt="Slide 2" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-wrapper" src="/Ballerz_3.png" alt="Slide 3" />
+          </Carousel.Item>
+        </Carousel>
+      </Tab>
+
+      <Tab className="carousel-tab" eventKey='Bytes Of Love' title='BOL'>
+        <Carousel>
+          <Carousel.Item>
+            <img className="carousel-wrapper" src="/BOL_menu.gif" alt="Slide 1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-wrapper" src="/BOL_2.png" alt="Slide 2" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-wrapper" src="/BOL_3.png" alt="Slide 3" />
           </Carousel.Item>
         </Carousel>
       </Tab>
     </Tabs>
+    </Container>
   );
 }
 

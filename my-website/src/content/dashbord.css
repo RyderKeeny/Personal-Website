@@ -1,19 +1,140 @@
-
 .dashbord {
-    max-width: 100%;
-    justify-content: center;
-    padding: 0rem 10rem;
-}
-
-.card-outer {
-    justify-content: center;
-    overflow: 'hidden'
-}
-
-
-
-.card-outer p {
-    align-items: center;
+    max-width: 85%;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    container-type: inline-size;
+  }
+  
+  .dashboard-tabs {
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  
+  .tab-content {
+    margin-top: 0%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-card {
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  /* Main flexbox layout for the two-column structure */
+  .dashboard-card .row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    flex: 1;
+    align-items: stretch;
+  }
+  
+  .dashboard-card .row .col {
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: clamp(150px, 35vw, 300px);
+    max-width: none !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-shrink: 2;
+  }
+  
+  /* Individual cards within columns */
+  .dashboard-card .row .col .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  
+  .githubLink {
     align-self: center;
-}
+    margin-top: -2%;
+    margin-bottom: 1%;
+  }
 
+  .repo-list {
+    padding: 0.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .repo-item {
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    line-height: 1.3;
+    flex-shrink: 0;
+  }
+  
+  .repo-item a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+  }
+  
+  .repo-item a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  .dashboard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5rem;
+    min-height: 150px;
+    flex: 1;
+  }
+  
+  .contributions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem;
+    overflow: hidden;
+    flex: 1;
+    min-height: 200px;
+  }
+  
+  .contributions > div {
+    transform: scale(clamp(0.4, 0.02vw + 0.6, 0.85));
+    transform-origin: center;
+    flex-shrink: 0;
+  }
+  
+  .projects-section {
+    padding: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .projects-section p {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+    flex-shrink: 0;
+  }
+  
+  .projects-section li {
+    margin-bottom: 0.25rem;
+    list-style-type: disc;
+    margin-left: 1rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }

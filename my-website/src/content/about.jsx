@@ -1,51 +1,79 @@
-
-import { Card, CardImg, CardTitle, Col, Container, Row, ProgressBar, CardBody, Tabs, Tab } from 'react-bootstrap'
-import { HydratedRouter } from 'react-router-dom'
-import './about.css'
-
+import { Card, Col, Row, Button, Container } from 'react-bootstrap';
+import './about.css';
 
 function About() {
-
   return (
-    <main className='about'>
-      
-    <h1> Ryder Keeny </h1>
-    <hr/>
-        
-    <h2> Education </h2>
-    <Row>
-      <Col>
-        <p> Associates of science Santa Fe college	 </p>
-        <p>Bachelors of Science In Computer Engineering</p>
-      </Col>
-      <Col>
-        <p> spring 2021 </p>
-        <p>  Fall 2025 </p>
-      </Col>
-    </Row>  
-    <h2> Leadership Roles </h2>
-      <h4>Open Source Club - Technical Lead</h4>
-      <p>Developing innovative and engaging open sourced programming projects alongside peers to help develop a stronger sense of cooperation and academic knowledge.</p>
-      <p>Utilized Agile to assist group members with project development by tracking issues and designating tasks list based on importance through constant updating amongst members during constant meetings.</p>
-    <h2> Work History </h2>
-      <Card>
-      <p> Florida Blue - Application Development Internship </p>
-      <p>Summer 2024 - 2025</p>
-      </Card>
-      
+    <main>
+      <Container className='about'>
+        <h1 className="text-center">Ryder Keeny</h1>
 
-    <h2> Interests Hobbies </h2>
-      <ul> Movies </ul> 
-      <ul> Game Creation </ul>
-      <ul> Cooking </ul>
-      <ul> Crocheting </ul>
-      <ul> Robotics </ul>
-      
-    <h2> Documents </h2>
-      <a href='/Resume.pdf' target="_blank"> Resume </a>
+        <section>
+          <h2>Education</h2>
+          <hr />
+          <Row>
+            <Col md={9} className="degrees">
+              <p>Associates of Science – Santa Fe Community College</p>
+              <p>Bachelor of Science - University of Florida</p>
+            </Col>
+            <Col md={3} className="dates">
+              <p>Spring 2021</p>
+              <p>Fall 2025</p>
+            </Col>
+          </Row>
+        </section>
 
+        <section>
+          <h4>Student Organization Roles</h4>
+          <h5>Open Source Club – Technical Lead</h5>
+          <p className="roles">
+            Developing innovative and engaging open-source programming projects alongside peers to strengthen
+            collaboration and academic knowledge.
+          </p>
+          <p className="roles">
+            Utilized Agile methodology to manage tasks and support team development, using regular updates and
+            meetings to guide progress.
+          </p>
+        </section>
+
+        <section>
+          <h2>Work History</h2>
+          <hr />
+          <Row className="justify-content-center">
+            <Col md={5}>
+              <Card className="job-card">
+                <Card.Body>
+                  <Card.Title className="job-title">
+                    Florida Blue – Application Development Intern
+                  </Card.Title>
+                  <Card.Text className="job-dates">Summer 2024</Card.Text>
+                  <Card.Text className="job-dates">Summer 2025</Card.Text>
+                  <Card.Img className="work_img" src="FB.png" />
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={5}>
+              <Card className="job-card">
+                <Card.Body>
+                  <Card.Title className="job-title">Coming Soon...</Card.Title>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </section>
+
+        <section>
+          <h2>Documents</h2>
+          <div className="linkbutton">
+            <Button variant="outline-success">
+              <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
+            </Button>
+          </div>
+        </section>
+      </Container>
     </main>
-  )
+  );
 }
 
-export default About
+export default About;
